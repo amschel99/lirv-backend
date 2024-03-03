@@ -2,6 +2,7 @@ import { AuthenticatedRequest } from "../../../interfaces";
 import { Response } from "express";
 import Community from "../../../models/community";
 import { firebase } from "../../../firebase";
+import User from "../../../models/userAuth";
 
 export const NewPost = async (req: AuthenticatedRequest, res: Response) => {
   const payload = {
@@ -19,10 +20,12 @@ export const NewPost = async (req: AuthenticatedRequest, res: Response) => {
 
   const communities = await Community.findById(communityId);
 
-  communities?.members.map((member) => {
+  communities?.members.map(async (member) => {
+    //for each find the user
+    const user = await User.findById(member);
     firebase
       .messaging()
-      .sendToDevice(member?.pushToken as string, payload, options)
+      .sendToDevice(user?.pushToken as string, payload, options)
       .then(function (response) {
         res.send("message succesfully sent !");
       })
