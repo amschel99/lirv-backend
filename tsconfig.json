@@ -1,0 +1,23 @@
+{
+  "extends": "@tsconfig/node18/tsconfig.json",
+  "include": [
+    "src/**/*.ts",
+    "src/tests/**/*.ts",
+    "src/tests/auth.test.ts",
+    "src/tests/verification.test.ts",
+    "src/tests/auth.test.js",
+    "src/deleteUsers.js",
+    "src/danger/cleardb.js"
+  ],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "esnext", // or "es2020", "es2022", etc.
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "noImplicitAny": false
+  }
+}

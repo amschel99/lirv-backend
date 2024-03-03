@@ -1,0 +1,16 @@
+import express from "express";
+import { registerUserAuth } from "../controllers/emailSignup";
+import { loginUser } from "../controllers/emailLogin";
+import { verify } from "../controllers/verify";
+import { sendVerification } from "../controllers/sendVerification";
+import { handleRefreshToken } from "../controllers/refreshToken";
+import { calculateProfileCompletion } from "../controllers/getProfileCompletion";
+import { updateProfile } from "../controllers/updateProfile";
+export const AuthRouter = express.Router();
+AuthRouter.route("/emailSignup").post(registerUserAuth);
+AuthRouter.route("/emailLogin").post(loginUser);
+AuthRouter.route("/refreshToken").post(handleRefreshToken);
+AuthRouter.route("/sendVerification").post(sendVerification);
+AuthRouter.route("/verify").post(verify);
+AuthRouter.route("/updateProfile").patch(updateProfile);
+AuthRouter.route("/completion-percentage").get(calculateProfileCompletion);

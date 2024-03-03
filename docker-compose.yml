@@ -1,0 +1,18 @@
+version: "3"
+services:
+  api:
+    networks:
+      - n1
+  mongo:
+    image: mongo:4.4.18
+    volumes:
+      - mongo-db:/data/db
+    networks:
+      - n1
+
+
+volumes:
+  mongo-db:
+networks:
+  n1:
+   
