@@ -109,6 +109,8 @@ server
 
         await connectDb("mongodb://localhost:27017/mydatabase");
         console.log("DB connected successfully");
+        const used = process.memoryUsage();
+        console.log(`Heap memory used ${JSON.stringify(used)}`);
         httpServer.listen(process.env.PORT, () => {
           console.log(`Server up and running on ${process.env.PORT} on Docker`);
         });
