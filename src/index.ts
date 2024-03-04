@@ -107,7 +107,7 @@ server
           return;
         }
 
-        await connectDb("mongodb://localhost:27017/mydatabase");
+        await connectDb(process.env.REMOTE_MONGO);
         console.log("DB connected successfully");
         const used = process.memoryUsage();
         console.log(`Heap memory used ${JSON.stringify(used)}`);
