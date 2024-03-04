@@ -12,7 +12,7 @@
   "exclude": ["node_modules"],
   "compilerOptions": {
     "target": "es2022",
-    "module": "esnext", // or "es2020", "es2022", etc.
+    "module": "commonjs",
     "outDir": "dist",
     "moduleResolution": "node",
     "esModuleInterop": true,

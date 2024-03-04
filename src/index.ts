@@ -107,7 +107,7 @@ server
           return;
         }
 
-        await connectDb(connection_url);
+        await connectDb("mongodb://localhost:27017/mydatabase");
         console.log("DB connected successfully");
         httpServer.listen(process.env.PORT, () => {
           console.log(`Server up and running on ${process.env.PORT} on Docker`);
