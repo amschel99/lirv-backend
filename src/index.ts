@@ -43,7 +43,9 @@ app.use(
     origin: "*",
   })
 );
-
+app.get("/", (req: Request, res: Response) => {
+  res.status(200).send(`app is working`);
+});
 app.use("/api/auth", AuthRouter);
 app.post("/createCommunities", createAllCommunities);
 app.use(verifyJwt);
