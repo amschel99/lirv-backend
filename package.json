@@ -11,7 +11,6 @@
     "dev::remote": "NODE_ENV=remote NODE_OPTIONS=--experimental-specifier-resolution=node  nodemon --exec  ts-node --esm src/index.ts ",
     "danger::clear-db": "ts-node --esm src/danger/cleardb.ts"
   },
-  "type": "module",
   "author": "",
   "license": "ISC",
   "devDependencies": {
