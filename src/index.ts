@@ -98,7 +98,8 @@ server
         }
         if (process.env.NODE_ENV === "remote") {
           await connectDb(
-            process.env.REMOTE_MONGO ?? "mongodb://localhost:27017/mydatabase"
+            process.env.REMOTE_MONGO ??
+              "mongodb+srv://nichlabs:4JsAR0yT34fUO1Iq@nichlabsapp.thoorlb.mongodb.net/?retryWrites=true&w=majority&appName=NichlabsApp"
           );
           console.log("DB connected successfully! yes");
           httpServer.listen(process.env.PORT, () => {
@@ -107,7 +108,9 @@ server
           return;
         }
 
-        await connectDb(process.env.REMOTE_MONGO);
+        await connectDb(
+          "mongodb+srv://nichlabs:4JsAR0yT34fUO1Iq@nichlabsapp.thoorlb.mongodb.net/?retryWrites=true&w=majority&appName=NichlabsApp"
+        );
         console.log("DB connected successfully");
         const used = process.memoryUsage();
         console.log(`Heap memory used ${JSON.stringify(used)}`);
