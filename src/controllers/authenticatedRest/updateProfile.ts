@@ -10,17 +10,6 @@ export const updateProfile = async (
 ) => {
   console.log(JSON.stringify(re.user));
   try {
-    if (re.body?.title) {
-      const community = await Community.findOneAndUpdate(
-        { title: re.body.title },
-        { $push: { members: re.user } },
-        { new: true }
-      );
-      io.emit("JoinCommunity", {
-        Community: community?._id,
-        user: re?.user,
-      });
-    }
     console.log(`data: ${JSON.stringify(re.body)}, user:${re.user}`);
     const updatedUser = await User.findByIdAndUpdate(re.user, re.body, {
       new: true,
