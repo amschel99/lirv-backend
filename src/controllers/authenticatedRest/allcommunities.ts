@@ -13,9 +13,9 @@ export const majorCommunities: {
 majorCareers.forEach((career) => {
   majorCommunities.push({
     title: career,
-    description: `Welcome to the ${career} Community! This community is dedicated to professionals in the ${career} field.`,
+    description: `Welcome to the ${career} Community! This community is dedicated to ${career} lovers!`,
 
-    tags: [`Community for ${career}`, `${career} Professionals`],
+    tags: [`${career}`],
     createdAt: new Date(),
   });
 });
