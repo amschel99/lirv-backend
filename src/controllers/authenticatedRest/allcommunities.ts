@@ -1,4 +1,4 @@
-import { majorCareers } from "../../utils/communities_data";
+import { majorBooks as majorCareers } from "../../utils/communities_data";
 import { Request, Response } from "express";
 
 import Community from "../../models/community";
